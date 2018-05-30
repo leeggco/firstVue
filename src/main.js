@@ -11,6 +11,11 @@ const store = new Vuex.Store({
   state: {
       totalPrice: 0
   },
+  getters: {
+    getTotal(state) {
+      return state.totalPrice
+    }
+  },
   mutations: {
     increment (state, price){
       state.totalPrice += price
@@ -20,6 +25,7 @@ const store = new Vuex.Store({
     }
   },
   actions: {
+    //一般用于执行异步操作后调用
     increment_as (context, price){
       context.commit('increment', price)
     }

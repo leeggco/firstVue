@@ -4,6 +4,8 @@
     <router-view/>
     <router-link to="apple">Apple</router-link>
     <router-link to="banana">Banana</router-link>
+    <router-link to="diy">Diy</router-link>
+    <router-link to="/">Home</router-link>
     <div>{{ totalPrice }}</div>
     <button @click="increment">increment</button>
     <button @click="decrement">decrement</button>
@@ -20,7 +22,8 @@ export default {
   },
   computed: {
     totalPrice(){
-      return this.$store.state.totalPrice
+      // return this.$store.state.totalPrice
+      return this.$store.getters.getTotal
     }
   },
   methods: {
